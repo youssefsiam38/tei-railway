@@ -1,0 +1,24 @@
+# Local test topology. Mirrors the Railway deployment: one public service, one volume.
+name: tei-railway-test
+
+services:
+  tei:
+    # Built from this repository. CI and the Railway template use the published GHCR image instead.
+    build:
+      context: .
+      args:
+        WRAPPER_VERSION: ${WRAPPER_VERSION:-0.0.0-local}
+        VCS_REF: ${VCS_REF:-local}
+    image: ${TEI_RAILWAY_IMAGE:-tei-railway:local}
+    restart: unless-stopped
+    environment:
+      PORT: '3000'
+      API_KEY: local-test-only-tei-api-key
+      MODEL_ID: BAAI/bge-small-en-v1.5
+    volumes:
+      - hub:/data
+    ports:
+      - '127.0.0.1:3000:3000'
+
+volumes:
+  hub:
