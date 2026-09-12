@@ -5,8 +5,8 @@ The published template. Reproduce it from this file if it ever has to be rebuilt
 | | |
 |---|---|
 | Name | Text Embeddings Inference |
-| Code | _filled in at publication_ |
-| Template id | _filled in at publication_ |
+| Code | `text-embeddings-inference` |
+| Template id | `dc6e6823-be56-488d-bece-2f832ec4adcb` |
 | Category | AI/ML |
 | Image | `ghcr.io/youssefsiam38/tei-railway:<version>` |
 | Icon | `assets/icon.png` |
